@@ -9,24 +9,26 @@ def calculate_decimal(decimal, places):
     # calculate round for the user
 
     # process
-    rounded = decimal * (10 ** (places)) + 0.5
-    rounded = int(rounded)
-    rounded = rounded / (10 ** (places))
-    # output
-    return rounded
+    decimal[0] = decimal[0] * (10 ** (places)) + 0.5
+    decimal[0] = int(decimal[0])
+    decimal[0] = decimal[0] / (10 ** (places))
+
 
 
 def main():
     # this function gets base and height
-
+    lists = []
     # input
     try:
         decimal = float(input("Enter a decimal number: "))
         places = int(input("Enter how many decimals you would like it rounded to: "))
+        lists.append(decimal)
+        
         print("")
 
         # call functions
-        print(calculate_decimal(decimal, places))
+        calculate_decimal(lists, places)
+        print(lists[0])
     except Exception:
         print("\nPlease follow the valid instructions")
 
